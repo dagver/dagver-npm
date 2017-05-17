@@ -58,7 +58,7 @@ function createGetVersion(): GetVersion {
 async function main()
 {
     try {
-        const rep = await Git.Repository.open("../aliq");
+        const rep = await Git.Repository.open(".");
         const commit = await rep.getHeadCommit();  
         const getVersion = createGetVersion();
         const v = await getVersion(commit);
