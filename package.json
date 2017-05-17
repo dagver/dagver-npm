@@ -1,0 +1,34 @@
+{
+  "name": "dagver",
+  "version": "0.0.0",
+  "description": "DAG Versioning",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --importHelpers --lib es2015 --alwaysStrict index.ts",
+    "tschelp": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergey Shandar",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "nodegit": "^0.18.3",
+    "tslib": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.18",
+    "typescript": "^2.3.2"
+  },
+  "keywords": [
+    "dag",
+    "git",
+    "version"
+  ],  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergey-shandar/dagver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sergey-shandar/dagver/issues"
+  },
+  "homepage": "https://github.com/sergey-shandar/dagver#readme"
+}
