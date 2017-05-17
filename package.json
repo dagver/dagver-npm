@@ -4,7 +4,7 @@
   "description": "DAG Versioning",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --importHelpers --lib es2015 --alwaysStrict -d index.ts",
+    "build": "tsc",
     "tschelp": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

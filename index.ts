@@ -10,7 +10,9 @@ interface Version {
 type GetVersion = (commit: Git.Commit) => Promise<Version>;
 
 function createGetVersion(): GetVersion {
+
     const cache : { [id: string]: Version } = {};
+    
     async function getUnknown(commit: Git.Commit): Promise<Version> {
         const n = commit.parentcount();
         if (n == 0) {
@@ -41,6 +43,7 @@ function createGetVersion(): GetVersion {
             }
         }
     } 
+    
     async function get(commit: Git.Commit): Promise<Version> {
         const id = commit.id().tostrS();
         const v = cache[id];
@@ -52,6 +55,7 @@ function createGetVersion(): GetVersion {
         cache[id] = nv;
         return nv;
     };
+    
     return get;
 }
 
