@@ -59,7 +59,7 @@ function createGetVersion(): GetVersion {
     return get;
 }
 
-async function main()
+export async function main()
 {
     try {
         const rep = await Git.Repository.open(".");
@@ -73,5 +73,3 @@ async function main()
         console.error(e);
     }
 }
-
-main();

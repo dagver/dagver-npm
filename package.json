@@ -1,6 +1,6 @@
 {
   "name": "dagver",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "DAG Versioning",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,10 @@
   },
   "files": [
     "index.js",
-    "index.d.ts"
+    "index.d.ts",
+    "bin/cli.js"
   ],
-  "bin" : { "dagver" : "./index.js" },
+  "bin" : { "dagver" : "./bin/cli.js" },
   "author": "Sergey Shandar",
   "license": "Apache-2.0",
   "dependencies": {
@@ -35,6 +36,5 @@
   "bugs": {
     "url": "https://github.com/sergey-shandar/dagver/issues"
   },
-  "homepage": "https://github.com/sergey-shandar/dagver#readme",
-  "engines" : { "node" : ">=6" }
+  "homepage": "https://github.com/sergey-shandar/dagver#readme"
 }
