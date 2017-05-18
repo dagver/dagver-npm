@@ -1,6 +1,6 @@
 {
   "name": "dagver",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "DAG Versioning",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "index.js",
     "index.d.ts"
   ],
+  "bin" : { "dagver" : "./index.js" },
   "author": "Sergey Shandar",
   "license": "Apache-2.0",
   "dependencies": {
