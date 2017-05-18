@@ -15,13 +15,13 @@ function createGetVersion(): GetVersion {
     
     async function getUnknown(commit: Git.Commit): Promise<Version> {
         const n = commit.parentcount();
-        if (n == 0) {
+        if (n === 0) {
             return {
                 height: 0,
                 major: 0,
                 minor: 0,
             };
-        } else if (n == 1) {
+        } else if (n === 1) {
             const p = await get(await commit.parent(0));
             return {
                 height: p.height + 1,

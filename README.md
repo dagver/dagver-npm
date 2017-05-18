@@ -2,13 +2,13 @@
 
 Versioning for Git Commit DAG (Directed acyclic graph)
 
-## Installing
+## Installation
 
 ```
 npm install -g dagver
 ```
 
-## Using
+## Usage
 
 ```
 dagver
