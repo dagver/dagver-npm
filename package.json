@@ -1,6 +1,6 @@
 {
   "name": "dagver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "DAG Versioning",
   "main": "index.js",
   "scripts": {
@@ -35,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/sergey-shandar/dagver/issues"
   },
-  "homepage": "https://github.com/sergey-shandar/dagver#readme"
+  "homepage": "https://github.com/sergey-shandar/dagver#readme",
+  "engines" : { "node" : ">=6" }
 }
