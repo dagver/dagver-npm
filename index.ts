@@ -66,7 +66,7 @@ export async function main()
         const commit = await rep.getHeadCommit();  
         const getVersion = createGetVersion();
         const v = await getVersion(commit);
-        console.log(`heght: ${v.height}`);
+        console.log(`height: ${v.height}`);
         console.log(`major: ${v.major}`);
         console.log(`minor: ${v.minor}`);
     } catch(e) {
