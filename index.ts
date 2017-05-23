@@ -87,9 +87,7 @@ export async function main()
                 }
             }
         });
-        if (array.length > 0) {
-
-        }
+        console.log(array.join("."));
     } catch(e) {
         console.error(e);
     }
