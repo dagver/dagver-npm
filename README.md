@@ -10,20 +10,18 @@ npm install -g dagver
 
 ## Usage
 
-```
-dagver
-```
-
-## Output Example
+Options:
 
 ```
-height: 27
-major: 6
-minor: 14
+h - a commit height, a number of commits in the longest Git graph path
+m - a merge height, a maximum number of merges in a Git graph path
+l - a number of commits from the last merge
+c - a commit number, the first 4 hex digits converted to decimal number
 ```
 
-Where
+## Output Examples
 
-- `height` is a Git height
-- `major` is a merge height, a maximum number of merges in a Git graph path.
-- `minor` is a number of commits from the last merge.
+```
+dagver h c
+dagver m l c
+```

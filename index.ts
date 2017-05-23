@@ -3,8 +3,8 @@ import * as Git from "nodegit";
 
 interface Version {
     readonly height: number;
-    readonly major: number;
-    readonly minor: number;
+    readonly merge: number;
+    readonly local: number;
 }
 
 type GetVersion = (commit: Git.Commit) => Promise<Version>;
@@ -18,15 +18,15 @@ function createGetVersion(): GetVersion {
         if (n === 0) {
             return {
                 height: 0,
-                major: 0,
-                minor: 0,
+                merge: 0,
+                local: 0,
             };
         } else if (n === 1) {
             const p = await get(await commit.parent(0));
             return {
                 height: p.height + 1,
-                major: p.major,
-                minor: p.minor + 1,
+                merge: p.merge,
+                local: p.local + 1,
             };
         } else {
             let height = 0;
@@ -34,12 +34,12 @@ function createGetVersion(): GetVersion {
             for (let i = 0; i < n; ++i) {
                 const p = await get(await commit.parent(i));
                 height = Math.max(height, p.height);
-                major = Math.max(major, p.major);
+                major = Math.max(major, p.merge);
             }
             return {
                 height: height + 1,
-                major: major + 1,
-                minor: 0
+                merge: major + 1,
+                local: 0
             }
         }
     } 
@@ -62,13 +62,34 @@ function createGetVersion(): GetVersion {
 export async function main()
 {
     try {
+        const argv = process.argv;
         const rep = await Git.Repository.open(".");
         const commit = await rep.getHeadCommit();  
         const getVersion = createGetVersion();
         const v = await getVersion(commit);
-        console.log(`height: ${v.height}`);
-        console.log(`major: ${v.major}`);
-        console.log(`minor: ${v.minor}`);
+        const array : string[] = [];
+        argv.forEach((arg, i) => {
+            if (i >= 2) {
+                switch (arg) {
+                    case "h":
+                        array.push(v.height.toString());
+                        break;
+                    case "m":
+                        array.push(v.merge.toString());
+                        break;
+                    case "l":
+                        array.push(v.local.toString());
+                        break;
+                    case "c":
+                        const id = parseInt(commit.id().tostrS().substr(0, 4), 16);
+                        array.push(id.toString());
+                        break;
+                }
+            }
+        });
+        if (array.length > 0) {
+
+        }
     } catch(e) {
         console.error(e);
     }
