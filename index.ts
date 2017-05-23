@@ -63,7 +63,8 @@ export async function main()
 {
     try {
         const argv = process.argv;
-        const rep = await Git.Repository.open(".");
+        const path = await Git.Repository.discover(".", 0, "");
+        const rep = await Git.Repository.open(path);
         const commit = await rep.getHeadCommit();  
         const getVersion = createGetVersion();
         const v = await getVersion(commit);

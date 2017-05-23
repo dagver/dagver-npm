@@ -22,6 +22,11 @@ c - a commit number, the first 4 hex digits converted to decimal number
 ## Output Examples
 
 ```
-dagver h c
-dagver m l c
+>dagver h c
+3245.11114
+```
+
+```
+>dagver m l c
+1379.20.11114
 ```

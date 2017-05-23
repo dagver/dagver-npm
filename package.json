@@ -1,6 +1,6 @@
 {
   "name": "dagver",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "DAG Versioning",
   "main": "index.js",
   "scripts": {
